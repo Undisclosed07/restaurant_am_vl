@@ -1,0 +1,32 @@
+{
+    "name": "xx/restaurant-am-vl",
+    "type": "typo3-cms-extension",
+    "description": "Carte de restaurant",
+    "authors": [
+        {
+            "name": "Alban MAYUNGA",
+            "role": "Developer"
+        },
+        {
+            "name": "Victor LEFRANCOIS",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xx\\RestaurantAmVl\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Xx\\RestaurantAmVl\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "xx/restaurant-am-vl": "self.version",
+        "typo3-ter/restaurant-am-vl": "self.version"
+    }
+}

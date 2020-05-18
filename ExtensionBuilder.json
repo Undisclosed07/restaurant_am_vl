@@ -1,0 +1,45 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "Carte de restaurant",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 9.5.0-9.5.99\n",
+            "disableLocalization": false,
+            "disableVersioning": true,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "9.5.0-9.5.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "restaurant_am_vl",
+        "name": "Restaurant AM VL",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "LP DAWIN",
+                "email": "albanmayunga01@gmail.com",
+                "name": "Alban MAYUNGA",
+                "role": "Developer"
+            },
+            {
+                "company": "",
+                "email": "lefrancois.victor@hotmail.fr",
+                "name": "Victor LEFRANCOIS",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "Xx"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2020-05-18 03:59",
+        "extension_builder_version": "9.10.2",
+        "be_user": " (1)"
+    }
+}
