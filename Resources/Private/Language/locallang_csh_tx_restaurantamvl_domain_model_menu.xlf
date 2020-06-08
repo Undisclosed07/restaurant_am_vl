@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-06-08T13:39:58Z" product-name="restaurant_am_vl">
+		<header/>
+		<body>
+			<trans-unit id="name.description">
+				<source>Nom</source>
+			</trans-unit>
+			<trans-unit id="price.description">
+				<source>Prix</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="service.description">
+				<source>Service</source>
+			</trans-unit>
+			<trans-unit id="available.description">
+				<source>Disponible</source>
+			</trans-unit>
+			<trans-unit id="discount.description">
+				<source>Réduction</source>
+			</trans-unit>
+			<trans-unit id="entries.description">
+				<source>Les entrées
+</source>
+			</trans-unit>
+			<trans-unit id="main_dishes.description">
+				<source>Les plats principaux</source>
+			</trans-unit>
+			<trans-unit id="cheeses.description">
+				<source>Les fromages
+</source>
+			</trans-unit>
+			<trans-unit id="desserts.description">
+				<source>Les desserts</source>
+			</trans-unit>
+			<trans-unit id="drinks.description">
+				<source>Les boissons</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

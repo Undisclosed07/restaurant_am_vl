@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-06-08T13:39:58Z" product-name="restaurant_am_vl">
+		<header/>
+		<body>
+			<trans-unit id="tx_restaurantamvl_domain_model_menu">
+				<source>Menu</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_menu.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_menu.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_menu.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_menu.service">
+				<source>Service</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_menu.available">
+				<source>Available</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_menu.discount">
+				<source>Discount</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_menu.entries">
+				<source>Entries</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_menu.main_dishes">
+				<source>Main Dishes</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_menu.cheeses">
+				<source>Cheeses</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_menu.desserts">
+				<source>Desserts</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_menu.drinks">
+				<source>Drinks</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_dish">
+				<source>Dish</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_dish.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_dish.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_dish.photo">
+				<source>Photo</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_dish.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_dish.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_dish.discount">
+				<source>Discount</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_dish.allergens">
+				<source>Allergens</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_dish.frozens">
+				<source>Frozens</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_drink">
+				<source>Drink</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_drink.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_drink.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_drink.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_drink.alcoholized">
+				<source>Alcoholized</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_drink.volume">
+				<source>Volume</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_drink.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_category.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_suggestion">
+				<source>Suggestion</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_suggestion.start">
+				<source>Start</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_suggestion.end">
+				<source>End</source>
+			</trans-unit>
+			<trans-unit id="tx_restaurantamvl_domain_model_suggestion.dishes">
+				<source>Dishes</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

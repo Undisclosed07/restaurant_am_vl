@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-06-08T13:39:58Z" product-name="restaurant_am_vl">
+		<header/>
+		<body>
+			<trans-unit id="name.description">
+				<source>Nom</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="photo.description">
+				<source>Photo</source>
+			</trans-unit>
+			<trans-unit id="type.description">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="price.description">
+				<source>Prix</source>
+			</trans-unit>
+			<trans-unit id="discount.description">
+				<source>Réduction</source>
+			</trans-unit>
+			<trans-unit id="allergens.description">
+				<source>Contient des allergènes</source>
+			</trans-unit>
+			<trans-unit id="frozens.description">
+				<source>Contient des produits surgelés</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

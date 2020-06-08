@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-06-08T13:39:58Z" product-name="restaurant_am_vl">
+		<header/>
+		<body>
+			<trans-unit id="start.description">
+				<source>Date de début</source>
+			</trans-unit>
+			<trans-unit id="end.description">
+				<source>Date de fin</source>
+			</trans-unit>
+			<trans-unit id="dishes.description">
+				<source>Les plats</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
