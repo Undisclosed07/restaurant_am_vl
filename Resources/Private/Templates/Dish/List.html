@@ -29,20 +29,21 @@
 				<th> </th>
 			</tr>
 			<f:widget.paginate objects="{dishes}" as="paginatedDishes" configuration="{itemsPerPage: 2}">
-				<f:for> {paginatedDishes}
+				<f:for each="{dishes}" as="dish">
+					<tr>
+						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.name}</f:link.action></td>
+						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.description -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</f:link.action></td>
+						<td><f:link.action action="show" arguments="{dish : dish}"> 
+							<f:image image="{dish.photo}" width="200px" treatIdAsReference="1"/>
+						</f:link.action></td>
+						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.type}</f:link.action></td>
+						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.price}</f:link.action></td>
+						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.discount}</f:link.action></td>
+						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.allergens}</f:link.action></td>
+						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.frozens}</f:link.action></td>
+					</tr>
+				</f:for>
 			</f:widget.paginate>
-			<f:for each="{dishes}" as="dish">
-				<tr>
-					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.name}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.description -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.photo.originalResource.name}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.type}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.price}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.discount}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.allergens}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.frozens}</f:link.action></td>
-				</tr>
-			</f:for>
 		</table>
 
 		<f:link.action action="new">New Dish</f:link.action>
