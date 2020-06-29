@@ -1,4 +1,7 @@
 <?php
+
+use Xx\RestaurantAmVl\Domain\Model\Dish;
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:restaurant_am_vl/Resources/Private/Language/locallang_db.xlf:tx_restaurantamvl_domain_model_dish',
@@ -188,7 +191,10 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['-- Label --', 0],
+                    ['Entrée', Dish::TYPE_ENTRY],
+                    ['Plat principal', Dish::TYPE_MAIN],
+                    ['Fromage', Dish::TYPE_CHEESE],
+                    ['Dessert', Dish::TYPE_DESSERT]
                 ],
                 'size' => 1,
                 'maxitems' => 1,

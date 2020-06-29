@@ -15,8 +15,6 @@
 	<f:section name="content">
 		<h1>Listing for Dish</h1>
 
-		<f:flashMessages />
-
 		<table  class="tx_restaurantamvl" >
 			<tr>
 				<th><f:translate key="tx_restaurantamvl_domain_model_dish.name" /></th>
@@ -30,19 +28,19 @@
 				<th> </th>
 				<th> </th>
 			</tr>
-
+			<f:widget.paginate objects="{dishes}" as="paginatedDishes" configuration="{itemsPerPage: 2}">
+				<f:for> {paginatedDishes}
+			</f:widget.paginate>
 			<f:for each="{dishes}" as="dish">
 				<tr>
 					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.name}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.description}</f:link.action></td>
+					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.description -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.photo.originalResource.name}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.type}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.price}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.discount}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.allergens}</f:link.action></td>
 					<td><f:link.action action="show" arguments="{dish : dish}"> {dish.frozens}</f:link.action></td>
-					<td><f:link.action action="edit" arguments="{dish : dish}">Edit</f:link.action></td>
-					<td><f:link.action action="delete" arguments="{dish : dish}">Delete</f:link.action></td>
 				</tr>
 			</f:for>
 		</table>

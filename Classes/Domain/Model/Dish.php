@@ -18,6 +18,10 @@ namespace Xx\RestaurantAmVl\Domain\Model;
  */
 class Dish extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
+    const TYPE_ENTRY = 1;
+    const TYPE_MAIN = 2;
+    const TYPE_CHEESE = 3;
+    const TYPE_DESSERT = 4;
 
     /**
      * Nom

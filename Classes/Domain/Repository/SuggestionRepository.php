@@ -18,4 +18,20 @@ namespace Xx\RestaurantAmVl\Domain\Repository;
  */
 class SuggestionRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+    public function currents()
+    {
+        $query = $this->createQuery();
+
+        $nov = new \DateTime;
+
+        $constraint = $query->logicalAnd{[
+                $query->lessThanOrEqual('start', $nov),
+                $query->greaterThan('end', $nov)
+        ]};
+
+        return $query
+            ->matching($constraint)
+            ->execute()
+        ;
+    }
 }

@@ -25,6 +25,15 @@
 							</config>
 						</TCEforms>
 					</switchableControllerActions>
+					<settings.list.paginate.itemsPerPage>
+						<TCEforms>
+							<label>Items par page</label>
+							<config>
+								<type>input</type>
+								<size>2</size>
+							</config>
+						</TCEforms>
+					</settings.list.paginate.itemsPerPage>
 				</el>
 			</ROOT>
 		</sDEF>
