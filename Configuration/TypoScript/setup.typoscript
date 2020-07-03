@@ -20,7 +20,7 @@ plugin.tx_restaurantamvl_pi1 {
         requireCHashArgumentForActionArguments = 1
     }
     mvc {
-        #callDefaultActionIfActionCantBeResolved = 1
+        callDefaultActionIfActionCantBeResolved = 1
     }
 }
 
@@ -45,7 +45,7 @@ plugin.tx_restaurantamvl_pi2 {
         requireCHashArgumentForActionArguments = 1
     }
     mvc {
-        #callDefaultActionIfActionCantBeResolved = 1
+        callDefaultActionIfActionCantBeResolved = 1
     }
 }
 
@@ -70,7 +70,7 @@ plugin.tx_restaurantamvl_pi3 {
         requireCHashArgumentForActionArguments = 1
     }
     mvc {
-        #callDefaultActionIfActionCantBeResolved = 1
+        callDefaultActionIfActionCantBeResolved = 1
     }
 }
 
@@ -95,7 +95,7 @@ plugin.tx_restaurantamvl_pi4 {
         requireCHashArgumentForActionArguments = 1
     }
     mvc {
-        #callDefaultActionIfActionCantBeResolved = 1
+        callDefaultActionIfActionCantBeResolved = 1
     }
 }
 

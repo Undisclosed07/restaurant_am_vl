@@ -1,51 +1,104 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-	<f:layout name="Default" />
+<f:layout name="Default" />
 
-	This Template is responsible for creating a table of domain objects.
+This Template is responsible for creating a table of domain objects.
 
-	If you modify this template, do not forget to change the overwrite settings
-	in /Configuration/ExtensionBuilder/settings.yaml:
-	  Resources:
-		Private:
-		  Templates:
-			List.html: keep
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep
 
-	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
-	<f:section name="content">
-		<h1>Listing for Dish</h1>
+<f:section name="content">
 
-		<table  class="tx_restaurantamvl" >
-			<tr>
-				<th><f:translate key="tx_restaurantamvl_domain_model_dish.name" /></th>
-				<th><f:translate key="tx_restaurantamvl_domain_model_dish.description" /></th>
-				<th><f:translate key="tx_restaurantamvl_domain_model_dish.photo" /></th>
-				<th><f:translate key="tx_restaurantamvl_domain_model_dish.type" /></th>
-				<th><f:translate key="tx_restaurantamvl_domain_model_dish.price" /></th>
-				<th><f:translate key="tx_restaurantamvl_domain_model_dish.discount" /></th>
-				<th><f:translate key="tx_restaurantamvl_domain_model_dish.allergens" /></th>
-				<th><f:translate key="tx_restaurantamvl_domain_model_dish.frozens" /></th>
-				<th> </th>
-				<th> </th>
-			</tr>
-			<f:widget.paginate objects="{dishes}" as="paginatedDishes" configuration="{itemsPerPage: 2}">
-				<f:for each="{dishes}" as="dish">
-					<tr>
-						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.name}</f:link.action></td>
-						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.description -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</f:link.action></td>
-						<td><f:link.action action="show" arguments="{dish : dish}"> 
-							<f:image image="{dish.photo}" width="200px" treatIdAsReference="1"/>
-						</f:link.action></td>
-						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.type}</f:link.action></td>
-						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.price}</f:link.action></td>
-						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.discount}</f:link.action></td>
-						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.allergens}</f:link.action></td>
-						<td><f:link.action action="show" arguments="{dish : dish}"> {dish.frozens}</f:link.action></td>
-					</tr>
-				</f:for>
-			</f:widget.paginate>
-		</table>
+	<div class="frame-container">
+		<div class="frame-inner">
+			<div class="card card-panel card-panel-info">
+				<h1 class="card-header">
+					<span>Nos spécialités</span>
+				</h1>
+				<div class="card-body">
+					<p>Au restaurant AM VL, nous sommes spécialisés dans la restauration de qualité.
+						Nos produits frais sont cuisinés par notre chef triplement étoilé.
+						Le goût est au coeur de nos recettes. Nous vous proposons tous les jours un plat, choisi par le chef
+						qui ne cessera de vous étonner grâce au mélange de saveurs.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-		<f:link.action action="new">New Dish</f:link.action>
-	</f:section>
+	<br><h1 class="text-info">La carte (Dish)</h1>
+
+	<table class="table table-striped">
+		<tr style="text-align: center;">
+			<th>
+				<f:translate key="tx_restaurantamvl_domain_model_dish.name" />
+			</th>
+			<th>
+				<f:translate key="tx_restaurantamvl_domain_model_dish.description" />
+			</th>
+			<th>
+				<f:translate key="tx_restaurantamvl_domain_model_dish.photo" />
+			</th>
+			<th>
+				<f:translate key="tx_restaurantamvl_domain_model_dish.type" />
+			</th>
+			<th>
+				<f:translate key="tx_restaurantamvl_domain_model_dish.price" />
+			</th>
+			<th>
+				<f:translate key="tx_restaurantamvl_domain_model_dish.discount" />
+			</th>
+			<th>
+				<f:translate key="tx_restaurantamvl_domain_model_dish.allergens" />
+			</th>
+			<th>
+				<f:translate key="tx_restaurantamvl_domain_model_dish.frozens" />
+			</th>
+		</tr>
+		<f:widget.paginate objects="{dishes}" as="paginatedDishes" configuration="{itemsPerPage: 2}">
+			<f:for each="{dishes}" as="dish">
+				<tr style="text-align: center;">
+					<td>
+						<f:link.action action="show" arguments="{dish : dish}"> {dish.name}</f:link.action>
+					</td>
+					<td>
+						<f:link.action action="show" arguments="{dish : dish}"> {dish.description ->
+							f:format.html(parseFuncTSPath: 'lib.parseFunc')}</f:link.action>
+					</td>
+					<td>
+						<f:link.action action="show" arguments="{dish : dish}">
+							<f:image image="{dish.photo}" width="200px" treatIdAsReference="1" />
+						</f:link.action>
+					</td>
+					<td>
+						<f:link.action action="show" arguments="{dish : dish}"> {dish.type}</f:link.action>
+					</td>
+					<td>
+						<f:link.action action="show" arguments="{dish : dish}"> {dish.price}</f:link.action>
+					</td>
+					<td>
+						<f:link.action action="show" arguments="{dish : dish}"> {dish.discount}</f:link.action>
+					</td>
+					<td>
+						<f:link.action action="show" arguments="{dish : dish}"> {dish.allergens}</f:link.action>
+					</td>
+					<td>
+						<f:link.action action="show" arguments="{dish : dish}"> {dish.frozens}</f:link.action>
+					</td>
+				</tr>
+			</f:for>
+		</f:widget.paginate>
+	</table>
+
+	
+	<f:link.action action="new" class="btn btn-info" style="border-radius: 3px;">
+		<f:image src="EXT:restaurant_am_vl/Resources/Public/Icons/add.png" alt="alt text" />
+		New Dish</f:link.action>
+</f:section>
+
 </html>
