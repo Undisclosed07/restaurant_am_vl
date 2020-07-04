@@ -67,8 +67,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 						<f:link.action action="show" arguments="{dish : dish}"> {dish.name}</f:link.action>
 					</td>
 					<td>
-						<f:link.action action="show" arguments="{dish : dish}"> {dish.description ->
-							f:format.html(parseFuncTSPath: 'lib.parseFunc')}</f:link.action>
+						{dish.description -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}
 					</td>
 					<td>
 						<f:link.action action="show" arguments="{dish : dish}">
@@ -76,19 +75,39 @@ Otherwise your changes will be overwritten the next time you save the extension 
 						</f:link.action>
 					</td>
 					<td>
-						<f:link.action action="show" arguments="{dish : dish}"> {dish.type}</f:link.action>
+						<f:if condition="{dish.type} == 1">
+							<f:then>
+								Entrée
+							</f:then>
+							<f:else if="{dish.type} == 2">
+								Plat principal
+							</f:else>
+							<f:else if="{dish.type} == 3">
+								Fromage
+							</f:else>
+							<f:else>
+								Dessert
+							</f:else>
+						</f:if>
 					</td>
 					<td>
-						<f:link.action action="show" arguments="{dish : dish}"> {dish.price}</f:link.action>
+						{dish.price}€
 					</td>
 					<td>
-						<f:link.action action="show" arguments="{dish : dish}"> {dish.discount}</f:link.action>
+						<f:if condition="{dish.discount} == 0">
+							<f:then>
+								Pas de réduction
+							</f:then>
+							<f:else>
+								Réduction de : {dish.discount}€
+							</f:else>
+						</f:if>
 					</td>
 					<td>
-						<f:link.action action="show" arguments="{dish : dish}"> {dish.allergens}</f:link.action>
+						<f:if then="Oui" else="Non" condition="{dish.allergens} == 1"></f:if>
 					</td>
 					<td>
-						<f:link.action action="show" arguments="{dish : dish}"> {dish.frozens}</f:link.action>
+						<f:if then="Oui" else="Non" condition="{dish.frozens} == 1"></f:if>
 					</td>
 				</tr>
 			</f:for>
