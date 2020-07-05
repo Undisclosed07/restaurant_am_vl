@@ -1,46 +1,50 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-	<f:layout name="Default" />
+<f:layout name="Default" />
 
-	This Template is responsible for creating a table of domain objects.
+This Template is responsible for creating a table of domain objects.
 
-	If you modify this template, do not forget to change the overwrite settings
-	in /Configuration/ExtensionBuilder/settings.yaml:
-	  Resources:
-		Private:
-		  Templates:
-			List.html: keep
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep
 
-	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
-	<f:section name="content">
-		<h1>Listing for Drink</h1>
+<f:section name="content">
+	<h1 class="text-info">Nos boissons</h1><br>
 
-		<f:flashMessages />
-
-		<table  class="tx_restaurantamvl" >
-			<tr>
-				<th><f:translate key="tx_restaurantamvl_domain_model_drink.name" /></th>
-				<th><f:translate key="tx_restaurantamvl_domain_model_drink.price" /></th>
-				<th><f:translate key="tx_restaurantamvl_domain_model_drink.description" /></th>
-				<th><f:translate key="tx_restaurantamvl_domain_model_drink.alcoholized" /></th>
-				<th><f:translate key="tx_restaurantamvl_domain_model_drink.volume" /></th>
-				<th> </th>
-				<th> </th>
-			</tr>
-
+	<div class="frame-container">
+		<div class="frame-inner">
 			<f:for each="{drinks}" as="drink">
-				<tr>
-					<td><f:link.action action="show" arguments="{drink : drink}"> {drink.name}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{drink : drink}"> {drink.price}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{drink : drink}"> {drink.description}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{drink : drink}"> {drink.alcoholized}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{drink : drink}"> {drink.volume}</f:link.action></td>
-					<td><f:link.action action="edit" arguments="{drink : drink}">Edit</f:link.action></td>
-					<td><f:link.action action="delete" arguments="{drink : drink}">Delete</f:link.action></td>
-				</tr>
-			</f:for>
-		</table>
+				<div class="card card-panel card-panel-info">
+					<h1 class="card-header ">
+						<span>{drink.name}</span>
+					</h1>
+					<div class="card-body">
+						<p>
+							{drink.description -> f:format.html(parseFuncTSPath: 'lib.parseFunc')} 
 
-		<f:link.action action="new">New Drink</f:link.action>
-	</f:section>
+							<strong>Volume : </strong>{drink.volume}<br>
+							<strong>Prix : </strong>{drink.price}€<br>
+							<strong>Boisson alcoolisée : </strong>
+							<f:if then="Oui" else="Non" condition="{drink.alcoholized} == 1"/><br><br>
+
+							<f:link.action class="btn btn-warning" style="border-radius: 3px;" action="edit">Editer</f:link.action>&nbsp;
+							<f:link.action class="btn btn-danger" style="border-radius: 3px;" action="delete">Supprimer</f:link.action>
+						</p>
+					</div>
+				</div><br>
+			</f:for>
+		</div>
+	</div>
+
+	<f:link.action action="new" class="btn btn-info" style="border-radius: 3px;">
+		<f:image src="EXT:restaurant_am_vl/Resources/Public/Icons/add.png" alt="alt text" />
+		New Drink
+	</f:link.action>
+	
+</f:section>
+
 </html>
