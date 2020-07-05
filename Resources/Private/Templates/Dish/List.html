@@ -31,88 +31,38 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		</div>
 	</div>
 
-	<br><h1 class="text-info">La carte (Dish)</h1>
+	<br><h1 class="text-info">La carte</h1><br>
 
-	<table class="table table-striped">
-		<tr style="text-align: center;">
-			<th>
-				<f:translate key="tx_restaurantamvl_domain_model_dish.name" />
-			</th>
-			<th>
-				<f:translate key="tx_restaurantamvl_domain_model_dish.description" />
-			</th>
-			<th>
-				<f:translate key="tx_restaurantamvl_domain_model_dish.photo" />
-			</th>
-			<th>
-				<f:translate key="tx_restaurantamvl_domain_model_dish.type" />
-			</th>
-			<th>
-				<f:translate key="tx_restaurantamvl_domain_model_dish.price" />
-			</th>
-			<th>
-				<f:translate key="tx_restaurantamvl_domain_model_dish.discount" />
-			</th>
-			<th>
-				<f:translate key="tx_restaurantamvl_domain_model_dish.allergens" />
-			</th>
-			<th>
-				<f:translate key="tx_restaurantamvl_domain_model_dish.frozens" />
-			</th>
-		</tr>
-		<f:widget.paginate objects="{dishes}" as="paginatedDishes" configuration="{itemsPerPage: 2}">
-			<f:for each="{dishes}" as="dish">
-				<tr style="text-align: center;">
-					<td>
-						<f:link.action action="show" arguments="{dish : dish}"> {dish.name}</f:link.action>
-					</td>
-					<td>
-						{dish.description -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}
-					</td>
-					<td>
-						<f:link.action action="show" arguments="{dish : dish}">
-							<f:image image="{dish.photo}" width="200px" treatIdAsReference="1" />
-						</f:link.action>
-					</td>
-					<td>
-						<f:if condition="{dish.type} == 1">
-							<f:then>
-								Entrée
-							</f:then>
-							<f:else if="{dish.type} == 2">
-								Plat principal
-							</f:else>
-							<f:else if="{dish.type} == 3">
-								Fromage
-							</f:else>
-							<f:else>
-								Dessert
-							</f:else>
-						</f:if>
-					</td>
-					<td>
-						{dish.price}€
-					</td>
-					<td>
-						<f:if condition="{dish.discount} == 0">
-							<f:then>
-								Pas de réduction
-							</f:then>
-							<f:else>
-								Réduction de : {dish.discount}€
-							</f:else>
-						</f:if>
-					</td>
-					<td>
-						<f:if then="Oui" else="Non" condition="{dish.allergens} == 1"></f:if>
-					</td>
-					<td>
-						<f:if then="Oui" else="Non" condition="{dish.frozens} == 1"></f:if>
-					</td>
-				</tr>
-			</f:for>
-		</f:widget.paginate>
-	</table>
+	<div class="card-menu card-menu card-menu-align-left card-menu-columns-3">
+		<f:for each="{dishes}" as="dish">
+			<div class="card-menu-item">
+				<div class="card">
+					<div class="card-img-top">
+						<f:image image="{dish.photo}" width="200" height="220" treatIdAsReference="1" />
+					</div>
+					<div class="card-body">
+						<h3 class="card-title">
+							<f:link.action action="show" arguments="{dish : dish}"> {dish.name}</f:link.action>
+						</h3>
+						<h3 class="card-subtitle">
+							{dish.price}€
+						</h3>
+						<p class="card-text">
+							{dish.description -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}
+						</p>
+					</div>
+					<div class="card-footer">
+						<f:link.action action="show" arguments="{dish : dish}">Plus de détails</f:link.action>
+					</div>
+				</div>
+			</div>
+		</f:for>
+	</div><br>
+
+	<f:widget.paginate objects="{dishes}" as="paginatedDishes" configuration="{itemsPerPage: 2}">
+	</f:widget.paginate>
+
+
 
 	
 	<f:link.action action="new" class="btn btn-info" style="border-radius: 3px;">

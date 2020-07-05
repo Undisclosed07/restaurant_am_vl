@@ -13,11 +13,64 @@
 	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 	<f:section name="content">
-		<h1>Single View for Dish</h1>
 
-		<f:flashMessages />
-		<f:render partial="Dish/Properties" arguments="{dish:dish}" />
-		<f:link.action action="list">Back to list</f:link.action><br />
-		<f:link.action action="new">New Dish</f:link.action>
+		<f:link.action class="btn btn-info" style="border-radius: 3px;" action="list"><  Retour à la carte</f:link.action><br><br>
+
+		<h1 class="text-info">{dish.name}</h1><br>
+
+		<div class="card-menu card-menu card-menu-align-left card-menu-columns-1">
+				<div class="card-menu-item">
+					<div class="card">
+						<div class="card-img-top">
+							<f:image image="{dish.photo}" width="800" height="800" treatIdAsReference="1" />
+						</div>
+						<div class="card-body">
+							<h3 class="text-info card-title">
+								{dish.name}
+							</h3>
+							<h3 class="card-subtitle">
+								{dish.price}€ - 
+								<f:if condition="{dish.discount} == 0">
+									<f:then>
+										<span class="text-danger">Pas de réduction</span>
+									</f:then>
+									<f:else>
+										<span class="text-primary">Réduction de {dish.discount}€ possible</span>
+									</f:else>
+								</f:if>
+							</h3>
+							<p class="card-text">
+								{dish.description -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}
+							</p>
+							<p class="card-text">
+								<strong>Type de repas : </strong>
+								<f:if condition="{dish.type} == 1">
+									<f:then>
+										Entrée
+									</f:then>
+									<f:else if="{dish.type} == 2">
+										Plat principal
+									</f:else>
+									<f:else if="{dish.type} == 3">
+										Fromage
+									</f:else>
+									<f:else>
+										Dessert
+									</f:else>
+								</f:if>
+							</p>
+							<p class="card-text">
+								<strong>Allergènes présents : </strong>
+								<f:if then="Oui" else="Non" condition="{dish.allergens} == 1"></f:if>
+							</p>
+							<p class="card-text">
+								<strong>Contient des produits surgelés : </strong>
+								<f:if then="Oui" else="Non" condition="{dish.frozens} == 1"></f:if>
+							</p>
+						</div>
+					</div>
+				</div>
+		</div>
+	
 	</f:section>
 </html>
