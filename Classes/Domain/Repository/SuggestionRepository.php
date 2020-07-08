@@ -34,4 +34,21 @@ class SuggestionRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             ->execute()
         ;
     }
+
+    public function incoming()
+    {
+        $query = $this->createQuery();
+
+        $nov = new \DateTime;
+
+        $constraint = $query->logicalAnd{[
+                $query->greaterThan('start', $nov),
+                $query->lessThanOrEqual('end', $nov),
+        ]};
+
+        return $query
+            ->matching($constraint)
+            ->execute()
+        ;
+    }
 }

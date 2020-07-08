@@ -15,11 +15,11 @@
 								<items>
 									<numIndex index="0">
 										<numIndex index="0">La carte</numIndex>
-										<numIndex index="1">Dish-&gt;list;Dish-&gt;search;Dish-&gt;show</numIndex>
+										<numIndex index="1">Dish->list;Dish->search</numIndex>
 									</numIndex>
 									<numIndex index="1">
 										<numIndex index="0">Mise en valeur</numIndex>
-										<numIndex index="1">Dish-&gt;focus</numIndex>
+										<numIndex index="1">Dish->focus</numIndex>
 									</numIndex>
 								</items>
 							</config>

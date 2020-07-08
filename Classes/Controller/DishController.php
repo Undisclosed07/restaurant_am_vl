@@ -29,13 +29,17 @@ class DishController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
     /**
      * action list
+     * @param \Xx\RestaurantAmVl\Domain\Repository\DishSearchQuery $search
      * 
      * @return void
      */
-    public function listAction()
+    public function listAction(\Xx\RestaurantAmVl\Domain\Repository\DishSearchQuery $search = null)
     {
         $dishes = $this->dishRepository->findAll();
-        $this->view->assign('dishes', $dishes);
+        $this->view->assignMultiple([
+            'dishes' => $dishes,
+            'search' =>$search
+        ]);
     }
 
     /**
@@ -44,18 +48,24 @@ class DishController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @param \Xx\RestaurantAmVl\Domain\Model\Dish $dish
      * @return void
      */
-    public function showAction(\Xx\RestaurantAmVl\Domain\Model\Dish $dish)
+    public function showAction($dish)
     {
+        //tx_restaurant_am_vl_pi2(dish)=2
         $this->view->assign('dish', $dish);
     }
 
     /**
      * action search
+     * @param \Xx\RestaurantAmVl\Domain\Repository\DishSearchQuery $search
      * 
      * @return void
      */
-    public function searchAction()
+    public function searchAction(\Xx\RestaurantAmVl\Domain\Repository\DishSearchQuery $search)
     {
+        $this->view->assignMultiple([
+            'dishes' => $this->dishRepository->search($search),
+            'search' => $search
+        ]);
     }
 
     /**
@@ -65,5 +75,7 @@ class DishController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function focusAction()
     {
+        $uids = \array_map('intval', \explode(',', $this->settings['focusedDishes']));
+        $this->view->assign('dishes', $this->dishRepository->findFocuses($uids));
     }
 }
