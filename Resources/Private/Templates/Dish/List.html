@@ -34,40 +34,41 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<br><h1 class="text-info">La carte</h1><br>
 
 	<div class="card-menu card-menu card-menu-align-left card-menu-columns-3">
-		<f:for each="{dishes}" as="dish">
-			<div class="card-menu-item">
-				<div class="card">
-					<div class="card-img-top">
-						<f:image image="{dish.photo}" width="200" height="220" treatIdAsReference="1" />
-					</div>
-					<div class="card-body">
-						<h3 class="card-title">
-							<f:link.action action="show" arguments="{dish : dish}"> {dish.name}</f:link.action>
-						</h3>
-						<h3 class="card-subtitle">
-							{dish.price}€
-						</h3>
-						<p class="card-text">
-							{dish.description -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}
-						</p>
-					</div>
-					<div class="card-footer">
-						<f:link.action action="show" arguments="{dish : dish}">Plus de détails</f:link.action>
+			<f:for each="{dishes}" as="dish">
+				<div class="card-menu-item">
+					<div class="card">
+						<div class="card-img-top">
+							<f:image image="{dish.photo}" width="200" height="220" treatIdAsReference="1" />
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">
+								<f:link.action action="show" arguments="{dish : dish}"> {dish.name}</f:link.action>
+							</h3>
+							<h3 class="card-subtitle">
+								{dish.price}€
+							</h3>
+							<p class="card-text">
+								{dish.description -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}
+							</p>
+						</div>
+						<div class="card-footer">
+							<f:link.action action="show" arguments="{dish : dish}" class="btn btn-info">Plus de détails
+							</f:link.action>
+						</div>
 					</div>
 				</div>
-			</div>
-		</f:for>
+			</f:for>
 	</div><br>
 
-	<f:widget.paginate objects="{dishes}" as="paginatedDishes" configuration="{itemsPerPage: 2}">
+	<f:widget.paginate objects="{dishes}" as="paginatedDishes" configuration="{itemsPerPage: 3}">
 	</f:widget.paginate>
 
 
 
 	
-	<f:link.action action="new" class="btn btn-info" style="border-radius: 3px;">
+	<f:link.action action="new" class="btn btn-info disabled" style="border-radius: 3px;">
 		<f:image src="EXT:restaurant_am_vl/Resources/Public/Icons/add.png" alt="alt text" />
-		New Dish
+		Ajouter un plat
 	</f:link.action>
 </f:section>
 

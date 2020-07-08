@@ -31,8 +31,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
 							<strong>Boisson alcoolisée : </strong>
 							<f:if then="Oui" else="Non" condition="{drink.alcoholized} == 1"/><br><br>
 
-							<f:link.action class="btn btn-warning" style="border-radius: 3px;" action="edit">Editer</f:link.action>&nbsp;
-							<f:link.action class="btn btn-danger" style="border-radius: 3px;" action="delete">Supprimer</f:link.action>
+							<f:link.action class="btn btn-warning disabled" style="border-radius: 3px;" action="edit">Editer</f:link.action>&nbsp;
+							<f:link.action class="btn btn-danger disabled" style="border-radius: 3px;" action="delete">Supprimer</f:link.action>
 						</p>
 					</div>
 				</div><br>
@@ -40,9 +40,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		</div>
 	</div>
 
-	<f:link.action action="new" class="btn btn-info" style="border-radius: 3px;">
+	<f:link.action action="new" class="btn btn-info disabled" style="border-radius: 3px;">
 		<f:image src="EXT:restaurant_am_vl/Resources/Public/Icons/add.png" alt="alt text" />
-		New Drink
+		Ajouter une boisson
 	</f:link.action>
 	
 </f:section>
