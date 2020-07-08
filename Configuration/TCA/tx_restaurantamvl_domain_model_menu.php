@@ -151,7 +151,8 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['-- Label --', 0],
+                    ['Midi', SERVICE_NOON], //Menu::TYPE_NOON
+                    ['Soir', SERVICE_EVENING] //Menu::TYPE_EVENING
                 ],
                 'size' => 1,
                 'maxitems' => 1,

@@ -3,13 +3,11 @@
 
     <f:section name="content">
         <h2>Les plats du moment</h2>
-        <f:for each="{dishes}" as="dish">
             En ce moment :
             <ul>
                 <f:for each="{dishes}" as="dish">
                     {dish.name}
                 </f:for>
             </ul>
-        </f:for>
     </f:section>
 </html>

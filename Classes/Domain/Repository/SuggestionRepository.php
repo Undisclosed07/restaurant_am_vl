@@ -25,8 +25,8 @@ class SuggestionRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $nov = new \DateTime;
 
         $constraint = $query->logicalAnd{[
-                $query->lessThanOrEqual('start', $nov),
-                $query->greaterThan('end', $nov)
+                $query->lessThanOrEqual('end', $nov),
+                $query->greaterThan('start', $nov)
         ]};
 
         return $query
@@ -42,8 +42,8 @@ class SuggestionRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         $nov = new \DateTime;
 
         $constraint = $query->logicalAnd{[
-                $query->greaterThan('start', $nov),
-                $query->lessThanOrEqual('end', $nov),
+                $query->lessThan('start', $nov),
+                $query->lessThan('end', $nov),
         ]};
 
         return $query
