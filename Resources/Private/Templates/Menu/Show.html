@@ -40,7 +40,18 @@ Otherwise your changes will be overwritten the next time you save the extension 
 				</header>
 				<p>{menu.description -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</p>
 				<p>Ce menu est 
-					<f:if then="disponible" else="indisponible" condition="{menu.available} == 1"></f:if>
+					<f:if then="disponible le" else="indisponible" condition="{menu.available} == 1"></f:if>
+					<f:if condition="{menu.service} == 1 && {menu.available} == 1">
+						<f:then>
+							Midi
+						</f:then>
+						<f:else if="{menu.service} == 2 && {menu.available} == 1">
+							Soir
+						</f:else>
+						<f:else if="{menu.service} == 3 && {menu.available} == 1">
+							Midi et soir
+						</f:else>
+					</f:if>
 				</p>
 			</div>
 		</div>
