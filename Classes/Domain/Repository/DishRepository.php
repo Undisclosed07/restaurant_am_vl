@@ -24,12 +24,6 @@ class DishRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      */
     protected $defaultOrderings = ['sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING];
 
-    /*public function findFocuses($uids)
-    {
-        $query = $this->createQuery();
-        return $query->matching($query->in('uid', $uids))->execute();
-    }*/
-
     /**
      * 
      * @param array $uids
