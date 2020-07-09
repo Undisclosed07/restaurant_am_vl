@@ -20,6 +20,7 @@ class Menu extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     const SERVICE_NOON = 1;
     const SERVICE_EVENING = 2;
+    const SERVICE_NOON_EVENING = 3;
 
     /**
      * Nom

@@ -72,10 +72,21 @@ class DishController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * action focus
      * 
      * @return void
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
      */
     public function focusAction()
     {
-        $uids = \array_map('intval', \explode(',', $this->settings['focusedDishes']));
-        $this->view->assign('dishes', $this->dishRepository->findFocuses($uids));
+        $uids = array_map('intval', explode(',', $this->settings['focus']));
+        $focusedDishes = $this->dishRepository->findFocuses($uids);
+        $this->view->assign('dishes', $focusedDishes);
+        //$uids = \array_map('intval', \explode(',', $this->settings['focusedDishes']));
+        //$this->view->assign('dishes', $this->dishRepository->findFocuses($uids));
     }
+
+    /*public function focusAction()
+    {
+        $uids = array_map('intval', explode(',', $this->settings['focus']));
+        $focusedDishes = $this->dishRepository->focus($uids);
+        $this->view->assign('dishes', $focusedDishes);
+    }*/
 }

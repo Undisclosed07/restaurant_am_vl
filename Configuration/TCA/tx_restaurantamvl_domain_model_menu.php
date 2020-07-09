@@ -1,4 +1,7 @@
 <?php
+
+use Xx\RestaurantAmVl\Domain\Model\Menu;
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:restaurant_am_vl/Resources/Private/Language/locallang_db.xlf:tx_restaurantamvl_domain_model_menu',
@@ -151,8 +154,9 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['Midi', SERVICE_NOON], //Menu::TYPE_NOON
-                    ['Soir', SERVICE_EVENING] //Menu::TYPE_EVENING
+                    ['Midi', Menu::SERVICE_NOON],
+                    ['Soir', Menu::SERVICE_EVENING],
+                    ['Midi et Soir', Menu::SERVICE_NOON_EVENING]
                 ],
                 'size' => 1,
                 'maxitems' => 1,
